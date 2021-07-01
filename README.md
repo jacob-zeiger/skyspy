@@ -30,7 +30,7 @@ Watch this [YouTube video](https://www.youtube.com/watch?v=bD32BESW4C0) to see h
 ### Installation Steps
  1. Clone this repository:
 	```bash
-	git clone https://github.com/neilnm/skyspy.git
+	git clone https://github.com/jacob-zeiger/skyspy.git
 	```
  2. Either run the `install.sh` script, which will:
     1. Install [dump1090](https://github.com/joergsteinkamp/dump1090) by cloning the git repo
