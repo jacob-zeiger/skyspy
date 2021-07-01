@@ -5,7 +5,7 @@ skyspy is a Python3 application meant to run on a Raspberry Pi that will alert y
 
 It allows you to define what your "vicinity" is by configuring a geofence through lat/lon coordinates and an altitude below which the aircraft should be.
 
-It achieves this with an ADS-B antenna and by parsing the output of the [dump1090](https://github.com/antirez/dump1090) application. See below for more information on how to achieve this. Not as complicated as it sounds!
+It achieves this with an ADS-B antenna and by parsing the output of the [dump1090](https://github.com/joergsteinkamp/dump1090) application. See below for more information on how to achieve this. Not as complicated as it sounds!
 
 Watch this [YouTube video](https://www.youtube.com/watch?v=bD32BESW4C0) to see how it in action.
 
@@ -27,19 +27,13 @@ Watch this [YouTube video](https://www.youtube.com/watch?v=bD32BESW4C0) to see h
 
 ## Installation
 
-**IMPORTANT**
-- There is a bug with one of the os libraries used by [dump1090](https://github.com/antirez/dump1090), see
-   [dump1090 issue #142](https://github.com/antirez/dump1090/issues/142)
-- Make sure to follow the installation instructions below to workaround this issue.
-
-
 ### Installation Steps
  1. Clone this repository:
 	```bash
 	git clone https://github.com/neilnm/skyspy.git
 	```
  2. Either run the `install.sh` script, which will:
-    1. Install [dump1090](https://github.com/antirez/dump1090) by cloning the git repo
+    1. Install [dump1090](https://github.com/joergsteinkamp/dump1090) by cloning the git repo
 	2. Install the OS dependencies using `apt-get`
 	3. Install python dependencies using pip
 
@@ -49,18 +43,6 @@ Watch this [YouTube video](https://www.youtube.com/watch?v=bD32BESW4C0) to see h
 
 	Or install the list of [Dependencies](#Dependencies) yourself and then continue with the steps below in order to fix the bug mentioned above.
 &nbsp;
-
- 3. To fix the bug mentioned above, add the following lines to this file:  `/usr/lib/arm-linux-gnueabihf/pkgconfig/librtlsdr.pc`
-&nbsp;
-	 **Note**: This step is specifically for a Raspbian OS see [dump1090 issue #142](https://github.com/antirez/dump1090/issues/142) if you are running this on a different OS/architecture.
-
-
-	 ```bash
-	prefix=/usr
-	exec_prefix=${prefix}
-	libdir=${exec_prefix}/lib
-	includedir=${prefix}/include
-	 ```
 
 	**Note**: After running the install script from step 2, your skyspy directory should have the dump1090 directory within it. Your skyspy directory should look like this:
 	```bash
@@ -122,7 +104,7 @@ Watch this [YouTube video](https://www.youtube.com/watch?v=bD32BESW4C0) to see h
 	python3 skyspy.py
 	```
 
-3. If everything has been setup correctly, skyspy will open in a new tab and also display the raw output of [dump1090](https://github.com/antirez/dump1090) on the terminal
+3. If everything has been setup correctly, skyspy will open in a new tab and also display the raw output of [dump1090](https://github.com/joergsteinkamp/dump1090) on the terminal
 
 	 - terminal <br>
 ![term](https://i.ibb.co/ZVXLFsJ/term.jpg)
@@ -143,7 +125,7 @@ Watch this [YouTube video](https://www.youtube.com/watch?v=bD32BESW4C0) to see h
 Missing dependencies based on Raspbian system:
 
 - Software
-	 - [dump1090](https://github.com/antirez/dump1090) which should be installed within the `skyspy` directory
+	 - [dump1090](https://github.com/joergsteinkamp/dump1090) which should be installed within the `skyspy` directory
  - Operating System dependencies which can be installed via `apt-get`:
 	 - `librtlsdr-dev`
 	 - `libgeos-dev`
