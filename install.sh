@@ -27,7 +27,7 @@ else
    echo "[FAIL]"
 fi
 
-if cd $DIR && git clone https://github.com/antirez/dump1090.git ; then
+if cd $DIR && git clone https://github.com/joergsteinkamp/dump1090.git ; then
     echo "[OK]"
 else
     echo "[FAIL]"
